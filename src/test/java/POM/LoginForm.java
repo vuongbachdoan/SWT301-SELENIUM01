@@ -1,3 +1,9 @@
+package POM;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
 public class LoginForm {
     private WebDriver driver;
     private WebElement firstNameField;

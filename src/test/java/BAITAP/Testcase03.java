@@ -1,9 +1,13 @@
+package BAITAP;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+
+import driver.driverFactory;
+
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
@@ -25,15 +29,15 @@ public class Testcase03 {
         addToCartButton.click();
 
         // Step 4: Change -> QTY -> value to 1000 and click -> UPDATE -> button.
-        WebElement qtyInput = driver.findElement(By.cssSelector("input[name='qty']"));
+        WebElement qtyInput = driver.findElement(By.cssSelector("#qty"));
         qtyInput.clear();
         qtyInput.sendKeys("1000");
         
-        WebElement updateButton = driver.findElement(By.cssSelector("button[name='update_cart_action']"));
+        WebElement updateButton = driver.findElement(By.cssSelector("button[title='Add to Cart']"));
         updateButton.click();
 
         // Step 5: Verify the error message
-        WebElement errorMessage = driver.findElement(By.cssSelector(".message-error div"));
+        WebElement errorMessage = driver.findElement(By.cssSelector("li[class='error-msg'] ul li"));
         String expectedErrorMessage = "The requested quantity for \"Sony Xperia\" is not available.";
         
         if (errorMessage.getText().equals(expectedErrorMessage)) {
