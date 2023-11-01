@@ -10,7 +10,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import POM.LoginForm;
+import POM.SignUpForm;
 import driver.driverFactory;
 
 public class Testcase05 {
@@ -44,8 +44,8 @@ public class Testcase05 {
         createAccountLink.click();
 
         // Fill New User information
-        LoginForm loginForm = new LoginForm(driver);
-        loginForm.fillForm("Test", "Mid","User", "idbbvjciqabfci@gmail.com", "password123", "password123");
+        SignUpForm signUpForm = new SignUpForm(driver);
+        signUpForm.fillForm("Test", "Mid","User", "idbbvjciqabfci@gmail.com", "password123", "password123");
 
         // Add sleep
         try {
